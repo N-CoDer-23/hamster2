@@ -1,0 +1,429 @@
+/* Global Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.hamster-kombat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 400px;
+    /* Maximum width */
+    margin: 0 auto;
+    /* Center on the screen */
+    border: 1px solid #333;
+    /* Border for visual clarity */
+    background: #333;
+    position: relative;
+    /* Parent relative position */
+}
+
+/* Settings Card */
+.settings-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: rgb(25, 24, 24);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Ensure it's on top */
+    border-radius: 8px;
+    color: white;
+}
+
+.settings-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.settings-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings-card-content p {
+    margin-bottom: 10px;
+}
+
+.language-options {
+    margin-bottom: 20px;
+}
+
+.language-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: rgb(27, 25, 25);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.language-options button:hover {
+    background-color: #0056b3;
+}
+
+.boost-limit-message {
+    background: #ff4c4c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* Space items evenly */
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+
+.profile-img {
+    width: 50px;
+    /* Smaller profile image */
+    height: 50px;
+    /* Smaller profile image */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.boost-button {
+    margin-left: 200px;
+    top: 50%;
+    left: 10px;
+    /* Adjust left position */
+    transform: translateY(-200%);
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.profit {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.profit h1 {
+    border-left: 1px solid #eee;
+}
+
+.profit img {
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 0 14px yellow;
+}
+
+.tasks-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between icon and heading */
+    margin-bottom: 20px;
+    /* Space below the header */
+}
+
+.number-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    animation: fly-up 2s ease-out forwards;
+}
+
+@keyframes fly-up {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 70%) translateY(50px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(-50px);
+    }
+}
+
+.closed-icon {
+    width: 35px;
+    /* Set a fixed size for the icon */
+    height: 35px;
+}
+
+.tasks {
+    display: flex;
+    justify-content: space-around;
+    /* Space tasks evenly */
+    gap: 10px;
+    /* Space between tasks */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    /* Calculate width for 3 columns with spacing */
+    text-align: center;
+    font-size: 13px;
+}
+
+.task span {
+    color: #939292;
+}
+
+.task-icon {
+    margin-bottom: 10px;
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+}
+
+.balance {
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    /* Add some space between balance and icon */
+}
+
+.balance-icon {
+    width: 20px;
+    /* Size for the dollar icon */
+    height: 20px;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 8px solid red;
+    background: linear-gradient(rgb(244, 70, 70), rgb(246, 246, 66), rgb(246, 185, 72));
+}
+
+.avatar img {
+    width: 250px;
+    /* Smaller avatar image */
+    height: 230px;
+    /* Smaller avatar image */
+    border-radius: 50%;
+}
+
+.boost_dizayn {
+    background: linear-gradient(rgb(84, 35, 1), rgb(246, 138, 66), rgb(88, 45, 2));
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.energy img {
+    width: 20px;
+    /* Rasmning kengligi */
+    height: 20px;
+    /* Rasmning balandligi */
+    margin-right: 5px;
+    /* Matn va rasm orasidagi bo'shliq */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 13px;
+    box-shadow: 0px 0 220px rgb(254, 64, 16);
+    z-index: 2;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-item img {
+    width: 20px;
+    /* Smaller size for footer icons */
+    height: 20px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.footer-icon {
+    margin-bottom: 5px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+}
+.level-up-card {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.level-up-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.level-up-content p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.avatar.disabled {
+    opacity: 0.5; /* Rangsiz yoki yarim ko'rinmas qilish */
+    pointer-events: none; /* Click eventlarni bloklash */
+    cursor: not-allowed; /* Tashqi ko'rinishni o'zgartirish */
+}
+.close-btn {
+    background: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 550px) {
+    .profile-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .progress-bar-container {
+        width: 80px;
+        height: 8px;
+    }
+
+    .closed-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tasks {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .task p {
+        font-size: 11px;
+    }
+
+    .task span {
+        font-size: 10px;
+    }
+
+    .task {
+        padding: 15px;
+        width: 110px;
+        height: 70px;
+    }
+
+    .balance h1 {
+        font-size: 24px;
+    }
+
+    .balance-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .avatar img {
+        width: 200px;
+        height: 190px;
+    }
+
+    .footer-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .settings-card {}
+}
